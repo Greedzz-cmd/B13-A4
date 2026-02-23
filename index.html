@@ -44,7 +44,7 @@
 
       <div class="grid xl:grid-cols-3 gap-5 justify-items-center items-center">
         <div
-          class="card bg-base-100 w-96 grid lg:justify-items-start sm:justify-center shadow-sm"
+          class="card bg-base-100 w-96 grid lg:justify-items-start justify-items-center shadow-sm"
         >
           <div class="card-body">
             <h2 class="card-title text-sm">Total</h2>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div
-          class="card bg-base-100 w-96 grid lg:justify-items-start sm:justify-center shadow-sm"
+          class="card bg-base-100 w-96 grid lg:justify-items-start justify-items-center shadow-sm"
         >
           <div class="card-body">
             <h2 class="card-title text-sm">Interview</h2>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div
-          class="card bg-base-100 w-96 grid lg:justify-items-start sm:justify-center shadow-sm"
+          class="card bg-base-100 w-96 grid lg:justify-items-start justify-items-center shadow-sm"
         >
           <div class="card-body">
             <h2 class="card-title text-sm">Rejected</h2>
@@ -122,6 +122,7 @@
               <p>Check back soon for new job opportunities</p>
             </div>
           </div>
+
           <div id="mobile-corp" class="job-card card bg-base-100 shadow-sm">
             <div class="card-body">
               <div class="flex justify-between">
@@ -540,9 +541,907 @@
         </div>
       </section>
 
-      <section id="interview-section" class="space-y-4 hidden"></section>
+      <section id="interview-section" class="space-y-4 hidden">
+        <div id="empty-card-interview" class="card bg-base-100 shadow-sm">
+          <div
+            class="card-body px-6 py-24 grid justify-items-center items-center"
+          >
+            <div>
+              <img src="./jobs.png" alt="" />
+            </div>
+            <h2 class="card-title">No jobs available</h2>
+            <p>Check back soon for new job opportunities</p>
+          </div>
+        </div>
+        <div
+          id="mobile-corp-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">Mobile First Corp</h2>
+              <button
+                onclick="deleteCard('mobile-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">React Native Developer</p>
 
-      <section id="rejected-section" class="space-y-4 hidden"></section>
+            <p class="text-[#64748B] text-base">
+              Remote • Full-time • $130,000 - $175,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+
+            <p class="job-description text-base">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('mobile-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('mobile-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="web-flow-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">WebFlow Agency</h2>
+              <button
+                onclick="deleteCard('web-flow')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Web Designer & Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Create stunning web experiences for high-profile clients. Must
+              have portfolio and experience with modern web design trends.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('web-flow')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('web-flow')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="data-viz-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">DataViz Solutions</h2>
+              <button
+                onclick="deleteCard('data-viz')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Data Visualization Specialist</p>
+
+            <p class="text-[#64748B] text-base">
+              Boston, MA • Full-time • $125,000 - $165,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Transform complex data into compelling visualizations. Required
+              skills: D3.js, React, and strong analytical thinking.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('data-viz')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('data-viz')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="cloud-first-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">CloudFirst Inc</h2>
+              <button
+                onclick="deleteCard('cloud-first')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Backend Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              Seattle, WA • Full-time • $140,000 - $190,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Design and maintain scalable backend systems using Python and AWS.
+              Work with modern DevOps practices and cloud infrastructure.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('cloud-first')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('cloud-first')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="innovation-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">Innovation Labs</h2>
+              <button
+                onclick="deleteCard('innovation')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">UI/UX Engineer</p>
+
+            <p class="text-[#64748B] text-base">
+              Austin, TX • Full-time • $110,000 - $150,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Create beautiful and functional user interfaces for our suite of
+              products. Strong design skills and frontend development expertise
+              required.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('innovation')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('innovation')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="mega-corp-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">MegaCorp Solutions</h2>
+              <button
+                onclick="deleteCard('mega-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">JavaScript Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              New York, NY • Full-time • $130,000 - $170,00
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Build enterprise applications with JavaScript and modern
+              frameworks. We offer competitive compensation, health insurance,
+              and professional development opportunities.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('mega-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('mega-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="startup-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">StartupXYZ</h2>
+              <button
+                onclick="deleteCard('startup')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Full Stack Engineer</p>
+
+            <p class="text-[#64748B] text-base">
+              Remote • Full-time • $120,000 - $160,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Join our fast-growing startup and work on our core platform.
+              Experience with Node.js and React required. Great benefits and
+              equity package included.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('startup')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('startup')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="tech-corp-interview"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">TechCorp Industries</h2>
+              <button
+                onclick="deleteCard('tech-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Senior Frontend Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              San Francisco, CA • Full-time • $130,000 - $175,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              We are looking for an experienced Frontend Developer to build
+              scalable web applications using React and TypeScript. You will
+              work with a talented team on cutting-edge projects.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('tech-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('tech-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rejected-section" class="space-y-4 hidden">
+        <div id="empty-card-rejected" class="card bg-base-100 shadow-sm">
+          <div
+            class="card-body px-6 py-24 grid justify-items-center items-center"
+          >
+            <div>
+              <img src="./jobs.png" alt="" />
+            </div>
+            <h2 class="card-title">No jobs available</h2>
+            <p>Check back soon for new job opportunities</p>
+          </div>
+        </div>
+        <div
+          id="mobile-corp-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">Mobile First Corp</h2>
+              <button
+                onclick="deleteCard('mobile-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">React Native Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              Remote • Full-time • $130,000 - $175,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+
+            <p class="job-description text-base">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('mobile-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('mobile-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="web-flow-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">WebFlow Agency</h2>
+              <button
+                onclick="deleteCard('web-flow')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Web Designer & Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              Los Angeles, CA • Part-time • $80,000 - $120,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Create stunning web experiences for high-profile clients. Must
+              have portfolio and experience with modern web design trends.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('web-flow')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('web-flow')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="data-viz-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">DataViz Solutions</h2>
+              <button
+                onclick="deleteCard('data-viz')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Data Visualization Specialist</p>
+
+            <p class="text-[#64748B] text-base">
+              Boston, MA • Full-time • $125,000 - $165,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Transform complex data into compelling visualizations. Required
+              skills: D3.js, React, and strong analytical thinking.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('data-viz')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('data-viz')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="cloud-first-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">CloudFirst Inc</h2>
+              <button
+                onclick="deleteCard('cloud-first')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Backend Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              Seattle, WA • Full-time • $140,000 - $190,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Design and maintain scalable backend systems using Python and AWS.
+              Work with modern DevOps practices and cloud infrastructure.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('cloud-first')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('cloud-first')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="innovation-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">Innovation Labs</h2>
+              <button
+                onclick="deleteCard('innovation')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">UI/UX Engineer</p>
+
+            <p class="text-[#64748B] text-base">
+              Austin, TX • Full-time • $110,000 - $150,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Create beautiful and functional user interfaces for our suite of
+              products. Strong design skills and frontend development expertise
+              required.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('innovation')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('innovation')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="mega-corp-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">MegaCorp Solutions</h2>
+              <button
+                onclick="deleteCard('mega-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">JavaScript Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              New York, NY • Full-time • $130,000 - $170,00
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Build enterprise applications with JavaScript and modern
+              frameworks. We offer competitive compensation, health insurance,
+              and professional development opportunities.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('mega-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('mega-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="startup-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">StartupXYZ</h2>
+              <button
+                onclick="deleteCard('startup')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Full Stack Engineer</p>
+
+            <p class="text-[#64748B] text-base">
+              Remote • Full-time • $120,000 - $160,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              Join our fast-growing startup and work on our core platform.
+              Experience with Node.js and React required. Great benefits and
+              equity package included.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('startup')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('startup')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="tech-corp-rejected"
+          class="job-card card bg-base-100 shadow-sm hidden"
+        >
+          <div class="card-body">
+            <div class="flex justify-between">
+              <h2 class="card-title text-[#002C5C]">TechCorp Industries</h2>
+              <button
+                onclick="deleteCard('tech-corp')"
+                class="btn bg-transparent border-2 border-[#F1F2F4] p-2 rounded-[50%] text-lg text-[#64748B]"
+              >
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+            <p class="text-lg text-[#64748B]">Senior Frontend Developer</p>
+
+            <p class="text-[#64748B] text-base">
+              San Francisco, CA • Full-time • $130,000 - $175,000
+            </p>
+            <div
+              class="not-applied-badge bg-[#EEF4FF] px-3 py-2 w-fit rounded-sm"
+            >
+              <p class="text-[#002C5C] text-sm font-medium">NOT APPLIED</p>
+            </div>
+            <div
+              class="interview-badge bg-[#10b9811a] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#10B981] text-sm font-medium">INTERVIEW</p>
+            </div>
+            <div
+              class="rejected-badge bg-[#ef444417] px-3 py-2 w-fit rounded-sm hidden"
+            >
+              <p class="text-[#EF4444] text-sm font-medium">REJECTED</p>
+            </div>
+            <p class="job-description text-base">
+              We are looking for an experienced Frontend Developer to build
+              scalable web applications using React and TypeScript. You will
+              work with a talented team on cutting-edge projects.
+            </p>
+            <div class="card-actions justify-start">
+              <button
+                onclick="removeAndAddInterview('tech-corp')"
+                class="btn text-[#10B981] border-[#10B981] bg-transparent hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+              <button
+                onclick="removeAndAddRejected('tech-corp')"
+                class="btn text-[#EF4444] border border-[#EF4444] bg-transparent hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="./scripts/common.js"></script>
   </body>

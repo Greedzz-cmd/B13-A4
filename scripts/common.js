@@ -103,29 +103,35 @@ function showOnlyAll() {
 }
 
 function removeAndAddInterview(childId) {
-  const interviewSection = document.getElementById("interview-section");
-
+  const rejectedChild = document.getElementById(childId + "-rejected");
+  const interviewedChild = document.getElementById(childId + "-interview");
   const child = document.getElementById(childId);
 
+  rejectedChild.classList.add("hidden");
+  interviewedChild.classList.remove("hidden");
+  interviewedChild.querySelector(".rejected-badge").classList.add("hidden");
+  interviewedChild.querySelector(".not-applied-badge").classList.add("hidden");
+  interviewedChild.querySelector(".interview-badge").classList.remove("hidden");
   child.querySelector(".rejected-badge").classList.add("hidden");
   child.querySelector(".not-applied-badge").classList.add("hidden");
   child.querySelector(".interview-badge").classList.remove("hidden");
-
-  interviewSection.appendChild(child);
 
   checkEmpty();
   countJobs();
 }
 
 function removeAndAddRejected(childId) {
-  const rejectedSection = document.getElementById("rejected-section");
+  const rejectedChild = document.getElementById(childId + "-rejected");
+  const interviewedChild = document.getElementById(childId + "-interview");
   const child = document.getElementById(childId);
-
+  interviewedChild.classList.add("hidden");
+  rejectedChild.classList.remove("hidden");
+  rejectedChild.querySelector(".rejected-badge").classList.remove("hidden");
+  rejectedChild.querySelector(".not-applied-badge").classList.add("hidden");
+  rejectedChild.querySelector(".interview-badge").classList.add("hidden");
   child.querySelector(".rejected-badge").classList.remove("hidden");
   child.querySelector(".not-applied-badge").classList.add("hidden");
   child.querySelector(".interview-badge").classList.add("hidden");
-
-  rejectedSection.appendChild(child);
 
   checkEmpty();
   countJobs();
@@ -144,8 +150,18 @@ function countTotal() {
 
 function deleteCard(id) {
   const card = document.getElementById(id);
+  const interviewCard = document.getElementById(id + "-interview");
+  const rejectCard = document.getElementById(id + "-rejected");
 
-  card.remove();
+  if (card) {
+    card.remove();
+  }
+  if (interviewCard) {
+    interviewCard.remove();
+  }
+  if (rejectCard) {
+    rejectCard.remove();
+  }
 
   checkEmpty();
   countTotal();
@@ -154,13 +170,20 @@ function deleteCard(id) {
 
 function checkEmpty() {
   const allSection = document.querySelectorAll("#all-section .job-card");
-  if (allSection.length == 0) {
-    const emptyCard = document.getElementById("empty-card");
-    emptyCard.classList.remove("hidden");
-  }
-}
+  const interviewSection = document.querySelectorAll(
+    "#interview-section .job-card:not(.hidden)",
+  );
+  const rejectedSection = document.querySelectorAll(
+    "#rejected-section .job-card:not(.hidden)",
+  );
+  const emptyCard = document.getElementById("empty-card");
+  const emptyCardInterview = document.getElementById("empty-card-interview");
+  const emptyCardRejected = document.getElementById("empty-card-rejected");
 
-function countInterview() {}
+  emptyCard.classList.toggle("hidden", allSection.length > 0);
+  emptyCardInterview.classList.toggle("hidden", interviewSection.length > 0);
+  emptyCardRejected.classList.toggle("hidden", rejectedSection.length > 0);
+}
 
 function countJobs() {
   const rejectedCount = document.getElementById("rejected-count");
@@ -169,11 +192,11 @@ function countJobs() {
   const interviewSideCount = document.getElementById("interview-side-count");
 
   const interviewLength = document.querySelectorAll(
-    "#interview-section .job-card",
+    "#interview-section .job-card:not(.hidden)",
   ).length;
 
   const rejectedLength = document.querySelectorAll(
-    "#rejected-section .job-card",
+    "#rejected-section .job-card:not(.hidden)",
   ).length;
 
   rejectedCount.innerHTML = rejectedLength;
